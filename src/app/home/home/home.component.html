@@ -1,0 +1,97 @@
+<!-- home.component.html -->
+
+<div class="welcome-container">
+    <h1>Welcome to The Post List</h1>
+    <br>
+    <p>Discover and share amazing posts!</p>
+</div>
+  
+<div class="instructions-container">
+    <p>Please choose one of the following options.</p>
+</div>
+
+  <div class="navigation-container">
+    <button mat-raised-button color="primary" routerLink="/login">Login</button>
+    <button mat-raised-button color="accent" routerLink="/signup">Signup</button>
+  </div>
+  
+  <div class="footer">
+    <p>&copy; 2023 Liam Corbett. All rights reserved.</p>
+  </div>
+
+  <style>
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.welcome-container {
+    font-family: 'Rakyat';
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background: #096060;
+    box-shadow: 0 5px 20px var(--colour-background-dark);
+    z-index: 10;
+    height: 5cm;
+    color: white;
+    justify-content: center;
+    text-align: center; 
+    margin-top: 0;
+}
+
+.welcome-container h1 {
+    font-size: 3em; 
+}
+
+.welcome-container p {
+    font-size: 1.5em; 
+}
+
+
+.navigation-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 15px 30px; 
+  font-size: 1.2em; 
+  background-color: #47a3a3; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 0px #000000; 
+  transition: background-color 0.3s ease; 
+}
+
+button:hover {
+  background-color: #286969; 
+}
+
+.footer {
+  margin-top: 31%; 
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+
+}
+
+.instructions-container {
+    text-align: center;
+    margin: 40px 0; 
+    color: #333; 
+    font-size: 1em;
+}
+
+
+  </style>

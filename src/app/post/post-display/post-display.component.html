@@ -1,0 +1,121 @@
+<div class="welcome-container">
+  <h1>Welcome to The Post List</h1>
+  <br>
+  <p>Discover and share amazing posts!</p>
+
+  <div class="navigation-buttons">
+    <button mat-raised-button color="primary" (click)="navigateToAddPage()">Add a Post</button>
+    <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+  </div>
+
+</div>
+
+<div class="instructions-container">
+  <p>View and Delete Posts Below</p>
+</div>
+
+<div class="post-container">
+  <div *ngFor="let post of posts">
+    <mat-card class="post-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ post.name }}</mat-card-title>
+        <mat-card-subtitle>{{ post.id }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="ondelete(post._id)">Delete</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<div class="footer">
+  <p>&copy; 2023 Liam Corbett. All rights reserved.</p>
+</div>
+
+<style>
+  .post-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+  }
+
+  .post-card {
+    width: 300px;
+    margin: 10px;
+  }
+
+  .welcome-container {
+    font-family: 'Rakyat';
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #096060;
+    box-shadow: 0 5px 20px var(--colour-background-dark);
+    z-index: 10;
+    height: 5cm;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .welcome-container h1 {
+    font-size: 3em;
+  }
+
+  .welcome-container p {
+    font-size: 1.5em;
+  }
+
+  .footer {
+    margin-top: 23.5%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  button {
+  margin-left: 2.7cm;
+  padding: 15px 30px; 
+  font-size: 0.5em; 
+  background-color: #47a3a3; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 0px #000000; 
+  transition: background-color 0.3s ease; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  
+}
+
+.navigation-buttons
+{
+  margin-right: 2.5cm; 
+  font-size: 1.5em; 
+  color: white;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.instructions-container {
+    text-align: center;
+    margin: 40px 0; 
+    color: #333; 
+    font-size: 1em;
+}
+
+</style>

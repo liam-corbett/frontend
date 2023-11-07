@@ -1,0 +1,21 @@
+
+.welcome-container {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .accent-color {
+    color: #FF4081; 
+  }
+  
+  .navigation-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    margin: 0 10px;
+  }
+  

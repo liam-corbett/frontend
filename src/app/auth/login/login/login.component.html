@@ -1,0 +1,152 @@
+<!-- login.component.html -->
+
+<div class="welcome-container">
+    <h1>Welcome to The Post List</h1>
+    <br>
+    <p>Discover and share amazing posts!</p>
+  </div>
+  
+  <div class="form-container">
+    <h2>Login</h2>
+  
+    <form (submit)="onlogin(loginform)" #loginform="ngForm">
+      <div class="input-container">
+        <input type="text"
+          ngModel name="enteredusername"
+          placeholder="USERNAME"
+          required
+          minlength="1"
+          pattern="^[a-zA-Z0-9\s!@#$%^&*()-_+=]+$"
+          #enteredusername="ngModel"/>
+        <div *ngIf="enteredusername.invalid && (enteredusername.dirty || enteredusername.touched)">invalid</div>
+      </div>
+  
+      <div class="input-container">
+        <input type="password"
+          ngModel name="enteredpassword"
+          placeholder="PASSWORD"
+          required
+          minlength="1"
+          pattern="^[a-zA-Z0-9\s!@#$%^&*()-_+=]+$"
+          #enteredpassword="ngModel"/>
+        <div *ngIf="enteredpassword.invalid && (enteredpassword.dirty || enteredpassword.touched)">invalid</div>
+      </div>
+  
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  
+  <div class="footer">
+    <p>&copy; 2023 Liam Corbett. All rights reserved.</p>
+  </div>
+  
+  <style>
+    
+    body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.welcome-container {
+    font-family: 'Rakyat';
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background: #096060;
+    box-shadow: 0 5px 20px var(--colour-background-dark);
+    z-index: 10;
+    height: 5cm;
+    color: white;
+    justify-content: center;
+    text-align: center; 
+    margin-top: 0;
+}
+
+.welcome-container h1 {
+    font-size: 3em; 
+}
+
+.welcome-container p {
+    font-size: 1.5em; 
+}
+
+
+.navigation-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+    margin-left: 3.8cm;
+  padding: 15px 30px; 
+  font-size: 1.2em; 
+  background-color: #47a3a3; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 0px #000000; 
+  transition: background-color 0.3s ease; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  
+}
+
+button:hover {
+  background-color: #286969; 
+}
+
+.footer {
+  margin-top: 24%; 
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+
+}
+
+.instructions-container {
+    text-align: center;
+    margin: 40px 0; 
+    color: #333; 
+    font-size: 1em;
+}
+  
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      justify-content: center;
+    }
+  
+    h2 {
+      font-size: 2em;
+    }
+  
+    .input-container {
+      margin-bottom: 20px;
+      text-align: center;
+      width: 10cm;
+    }
+  
+    label {
+      font-size: 1.2em;
+      margin-bottom: 5px;
+      text-align: center;
+      display: block;
+    }
+  
+    input {
+      padding: 10px;
+      font-size: 1em;
+    }
+  </style>
+  

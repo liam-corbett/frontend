@@ -1,0 +1,152 @@
+<div class="welcome-container">
+    <h1>Welcome to The Post List</h1>
+    <br>
+    <p>Discover and share amazing posts!</p>
+  
+    <div class="navigation-buttons">
+      <button mat-raised-button color="primary" (click)="navigateToDisplayPage()">View Posts</button>
+      <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+    </div>
+  
+  </div>
+  
+  <div class="instructions-container">
+    <p>Add a Post Below</p>
+  </div>
+  
+
+  <mat-card class="post-card">
+    <form (submit)="onaddpost(addPost)" #addPost="ngForm">
+
+      <mat-form-field>
+        <input matInput
+          type="text"
+          ngModel
+          name="enteredID"
+          placeholder="Post ID"
+          required
+          minlength="1"
+          pattern="^[a-zA-Z0-9\s_-]+$"
+          #enteredID="ngModel"
+        />
+
+        <mat-error *ngIf="enteredID.invalid && (enteredID.dirty || enteredID.touched)">Invalid Post ID</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput
+          type="text"
+          ngModel
+          name="enteredName"
+          placeholder="Post Name"
+          required
+          minlength="1"
+          pattern="^[a-zA-Z0-9\s_-]+$"
+          #enteredName="ngModel"
+        />
+        <mat-error *ngIf="enteredName.invalid && (enteredName.dirty || enteredName.touched)">Invalid Post Name</mat-error>
+      </mat-form-field>
+  
+      <button mat-button type="submit" mat-raised-button color="primary" class="Add">Add Post</button>
+    </form>
+  </mat-card>
+  
+  <div class="footer">
+    <p>&copy; 2023 Liam Corbett. All rights reserved.</p>
+  </div>
+  
+
+<style>
+
+.welcome-container {
+    font-family: 'Rakyat';
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #096060;
+    box-shadow: 0 5px 20px var(--colour-background-dark);
+    z-index: 10;
+    height: 5cm;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .welcome-container h1 {
+    font-size: 3em;
+  }
+
+  .welcome-container p {
+    font-size: 1.5em;
+  }
+
+  .footer {
+    margin-top: 17%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  button {
+  margin-left: 2.7cm;
+  padding: 15px 30px; 
+  font-size: 0.5em; 
+  background-color: #47a3a3; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 0px #000000; 
+  transition: background-color 0.3s ease; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  
+}
+
+.navigation-buttons
+{
+  margin-right: 2.5cm; 
+  font-size: 1.5em; 
+  color: white;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.instructions-container {
+    text-align: center;
+    margin: 40px 0; 
+    color: #333; 
+    font-size: 1em;
+}
+
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px auto; 
+}
+
+mat-form-field {
+  width: 100%; 
+  margin-bottom: 20px; 
+}
+
+
+.Add {
+  margin-top: 10px; 
+  margin-right: 2.5cm;
+}
+
+
+</style>

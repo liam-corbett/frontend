@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --colour-primary: #0C8083;
+    --colour-primary-light: #289ea0;
+    --colour-primary-dark: #104448;
+    --colour-secondary: #f58120;
+    --colour-secondary-light: #faab34;
+    --colour-background: #F3EACD;
+    --colour-background-dark: #252A34;
+}
+
+
+
+/* styles.css */
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0; /* Use your desired background color */
+  }
+  
+  
